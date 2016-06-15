@@ -15,39 +15,54 @@ public class PageBeanDemo {
         list.add(8);
         list.add(9);
         list.add(10);
-        PageBean listPage = new PageBean(list, 2);
-        try {
+        PageBean listPage = new PageBean(list, 4);
+        try {                                              /////////next page
             System.out.printf("%s " ,listPage.next());
         } catch (PageDoesNotExist pageDoesNotExist) {
             pageDoesNotExist.printStackTrace();
         }
-        try {
+        try {                                                /////////next page
             System.out.printf("%s " ,listPage.next());
         } catch (PageDoesNotExist pageDoesNotExist) {
             pageDoesNotExist.printStackTrace();
         }
-        try {
+        try {                                                /////////next page
             System.out.printf("%s " ,listPage.next());
         } catch (PageDoesNotExist pageDoesNotExist) {
             pageDoesNotExist.printStackTrace();
         }
-        try {
-            System.out.printf("%s " ,listPage.next());
-        } catch (PageDoesNotExist pageDoesNotExist) {
-            pageDoesNotExist.printStackTrace();
-        }
-        try {
-            System.out.printf("%s " ,listPage.next());
-        } catch (PageDoesNotExist pageDoesNotExist) {
-            pageDoesNotExist.printStackTrace();
-        }
-        try {
+        try {                                               /////////previous page
             System.out.printf("%s " ,listPage.previous());
         } catch (PageDoesNotExist pageDoesNotExist) {
             pageDoesNotExist.printStackTrace();
         }
-        try {
+        try {                                               /////////next page
             System.out.printf("%s " ,listPage.next());
+        } catch (PageDoesNotExist pageDoesNotExist) {
+            pageDoesNotExist.printStackTrace();
+        }
+        try {                                              /////////first page
+            System.out.printf("%s " ,listPage.firstPage());
+        } catch (PageDoesNotExist pageDoesNotExist) {
+            pageDoesNotExist.printStackTrace();
+        }
+        try {                                              /////////next page
+            System.out.printf("%s " ,listPage.next());
+        } catch (PageDoesNotExist pageDoesNotExist) {
+            pageDoesNotExist.printStackTrace();
+        }
+        try {                                             /////////previous page
+            System.out.printf("%s " ,listPage.previous());
+        } catch (PageDoesNotExist pageDoesNotExist) {
+            pageDoesNotExist.printStackTrace();
+        }
+        try {                                             /////////last page
+            System.out.printf("%s " ,listPage.lastPage());
+        } catch (PageDoesNotExist pageDoesNotExist) {
+            pageDoesNotExist.printStackTrace();
+        }
+        try {                                             /////////previous page
+            System.out.printf("%s " ,listPage.previous());
         } catch (PageDoesNotExist pageDoesNotExist) {
             pageDoesNotExist.printStackTrace();
         }
