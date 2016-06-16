@@ -16,55 +16,24 @@ public class PageBeanDemo {
         list.add(9);
         list.add(10);
         PageBean listPage = new PageBean(list, 4);
-        try {                                              /////////next page
-            System.out.printf("%s " ,listPage.next());
+        try {
+            System.out.printf("%s %d page \n" ,listPage.next(), listPage.getCurrentPageNumber());
+            System.out.printf("%s %d page \n" ,listPage.next(), listPage.getCurrentPageNumber());
+            System.out.printf("%s %d page \n" ,listPage.next(), listPage.getCurrentPageNumber());
+            System.out.printf("%s %d page \n" ,listPage.previous(), listPage.getCurrentPageNumber());
+            System.out.printf("%s %d page \n" ,listPage.next(), listPage.getCurrentPageNumber());
+            System.out.printf("%s %d page \n" ,listPage.firstPage(), listPage.getCurrentPageNumber());
+            System.out.printf("%s %d page \n" ,listPage.next(), listPage.getCurrentPageNumber());
+            System.out.printf("%s %d page \n" ,listPage.previous(), listPage.getCurrentPageNumber());
+            System.out.printf("%s %d page \n" ,listPage.lastPage(), listPage.getCurrentPageNumber());
+            System.out.printf("%s %d page \n" ,listPage.previous(), listPage.getCurrentPageNumber());
         } catch (PageDoesNotExist pageDoesNotExist) {
             pageDoesNotExist.printStackTrace();
         }
-        try {                                                /////////next page
-            System.out.printf("%s " ,listPage.next());
-        } catch (PageDoesNotExist pageDoesNotExist) {
-            pageDoesNotExist.printStackTrace();
-        }
-        try {                                                /////////next page
-            System.out.printf("%s " ,listPage.next());
-        } catch (PageDoesNotExist pageDoesNotExist) {
-            pageDoesNotExist.printStackTrace();
-        }
-        try {                                               /////////previous page
-            System.out.printf("%s " ,listPage.previous());
-        } catch (PageDoesNotExist pageDoesNotExist) {
-            pageDoesNotExist.printStackTrace();
-        }
-        try {                                               /////////next page
-            System.out.printf("%s " ,listPage.next());
-        } catch (PageDoesNotExist pageDoesNotExist) {
-            pageDoesNotExist.printStackTrace();
-        }
-        try {                                              /////////first page
-            System.out.printf("%s " ,listPage.firstPage());
-        } catch (PageDoesNotExist pageDoesNotExist) {
-            pageDoesNotExist.printStackTrace();
-        }
-        try {                                              /////////next page
-            System.out.printf("%s " ,listPage.next());
-        } catch (PageDoesNotExist pageDoesNotExist) {
-            pageDoesNotExist.printStackTrace();
-        }
-        try {                                             /////////previous page
-            System.out.printf("%s " ,listPage.previous());
-        } catch (PageDoesNotExist pageDoesNotExist) {
-            pageDoesNotExist.printStackTrace();
-        }
-        try {                                             /////////last page
-            System.out.printf("%s " ,listPage.lastPage());
-        } catch (PageDoesNotExist pageDoesNotExist) {
-            pageDoesNotExist.printStackTrace();
-        }
-        try {                                             /////////previous page
-            System.out.printf("%s " ,listPage.previous());
-        } catch (PageDoesNotExist pageDoesNotExist) {
-            pageDoesNotExist.printStackTrace();
-        }
+        /*
+        I thought about a endless while cycle with scanner that reads strings from the console, but at the time it didn't look like a valid solution to me.
+        If you like I could make an implementation. I was thinking about several code words that will be compared, each one corresponding to its function like commands
+        plus the word "End" or "Exit" that will serve as a command for getting out of the cycle.
+         */
     }
 }
