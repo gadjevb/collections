@@ -8,7 +8,7 @@ public class PageBean {
                                                                                // and then add it to the leftBorder, but I would still have had one class level variable.
     /**                                                                          So I decided to add two more and get rid of the multiplication because it's a slow operation
     Constructor                                                                  when compared to addition.
-     */                                                                       // If there is a better way I would like to learn about it!
+     */                                                                        // If there is a better way I would like to learn about it!
     public PageBean(List<Object> list, int pageSize) {
         this.list = new LinkedList<>(list);
         this.pageSize = pageSize;

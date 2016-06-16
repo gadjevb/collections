@@ -17,16 +17,25 @@ public class PageBeanDemo {
         list.add(10);
         PageBean listPage = new PageBean(list, 4);
         try {
-            System.out.printf("%s %d page \n" ,listPage.next(), listPage.getCurrentPageNumber());
-            System.out.printf("%s %d page \n" ,listPage.next(), listPage.getCurrentPageNumber());
-            System.out.printf("%s %d page \n" ,listPage.next(), listPage.getCurrentPageNumber());
-            System.out.printf("%s %d page \n" ,listPage.previous(), listPage.getCurrentPageNumber());
-            System.out.printf("%s %d page \n" ,listPage.next(), listPage.getCurrentPageNumber());
-            System.out.printf("%s %d page \n" ,listPage.firstPage(), listPage.getCurrentPageNumber());
-            System.out.printf("%s %d page \n" ,listPage.next(), listPage.getCurrentPageNumber());
-            System.out.printf("%s %d page \n" ,listPage.previous(), listPage.getCurrentPageNumber());
-            System.out.printf("%s %d page \n" ,listPage.lastPage(), listPage.getCurrentPageNumber());
-            System.out.printf("%s %d page \n" ,listPage.previous(), listPage.getCurrentPageNumber());
+            System.out.printf("%s %d page \n" ,listPage.next(), listPage.getCurrentPageNumber());       //Next page, current page is 1
+
+            System.out.printf("%s %d page \n" ,listPage.next(), listPage.getCurrentPageNumber());       //Next page, current page is 2
+
+            System.out.printf("%s %d page \n" ,listPage.next(), listPage.getCurrentPageNumber());       //Next page, current page is 3
+
+            System.out.printf("%s %d page \n" ,listPage.previous(), listPage.getCurrentPageNumber());   //Previous page, current page is 2
+
+            System.out.printf("%s %d page \n" ,listPage.next(), listPage.getCurrentPageNumber());       //Next page, current page is 3
+
+            System.out.printf("%s %d page \n" ,listPage.firstPage(), listPage.getCurrentPageNumber());  //First page, current page is 1
+
+            System.out.printf("%s %d page \n" ,listPage.next(), listPage.getCurrentPageNumber());       //Next page, current page is 2
+
+            System.out.printf("%s %d page \n" ,listPage.previous(), listPage.getCurrentPageNumber());   //Previous page, current page is 1
+
+            System.out.printf("%s %d page \n" ,listPage.lastPage(), listPage.getCurrentPageNumber());   //Last page, current page is 3
+
+            System.out.printf("%s %d page \n" ,listPage.previous(), listPage.getCurrentPageNumber());   //Previous page, current page is 2
         } catch (PageDoesNotExist pageDoesNotExist) {
             pageDoesNotExist.printStackTrace();
         }
