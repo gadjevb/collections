@@ -4,11 +4,11 @@ import java.util.*;
 
 public class PageBean {
     private List<Object> list = null;
-    private int pageSize = 0, leftBorder = 0, rightBorder = 0, pageNumber = 0; // I think that this way is easier, I could've used the pageNumber to multiply the pageSize
-                                                                               // and then add it to the leftBorder, but I would still have had one class level variable.
-    /**                                                                          So I decided to add two more and get rid of the multiplication because it's a slow operation
-    Constructor                                                                  when compared to addition.
-     */                                                                        // If there is a better way I would like to learn about it!
+    private int pageSize = 0, leftBorder = 0, rightBorder = 0, pageNumber = 0;
+
+    /**
+    Constructor
+     */
     public PageBean(List<Object> list, int pageSize) {
         this.list = new LinkedList<>(list);
         this.pageSize = pageSize;
@@ -19,8 +19,9 @@ public class PageBean {
      */
     public List<Object> next() throws PageDoesNotExist {
         pageNumber++;
-        if ((leftBorder + pageSize) < list.size()) {
-            rightBorder = leftBorder + pageSize;
+        int tempPlus = leftBorder + pageSize;
+        if ((tempPlus) < list.size()) {
+            rightBorder = tempPlus;
         } else {
             rightBorder = list.size();
         }
@@ -28,7 +29,7 @@ public class PageBean {
             throw new PageDoesNotExist();
         }
         List<Object> tempList = list.subList(leftBorder, rightBorder);
-        leftBorder = leftBorder + pageSize;
+        leftBorder = tempPlus;
         return tempList;
     }
 
@@ -37,14 +38,16 @@ public class PageBean {
      */
     public List<Object> previous() throws PageDoesNotExist {
         pageNumber--;
-        if ((leftBorder - pageSize - pageSize) < 0) {
+        int tempMinus = leftBorder - pageSize - pageSize;
+        int tempPlus = tempMinus + pageSize;
+        if ((tempMinus) < 0) {
             throw new PageDoesNotExist();
         } else {
-            leftBorder = leftBorder - pageSize - pageSize;
+            leftBorder = tempMinus;
         }
-        rightBorder = leftBorder + pageSize;
+        rightBorder = tempPlus;
         List<Object> tempList = list.subList(leftBorder, rightBorder);
-        leftBorder = leftBorder + pageSize;
+        leftBorder = tempPlus;
         return tempList;
     }
 
@@ -76,8 +79,9 @@ public class PageBean {
     public List<Object> firstPage() throws PageDoesNotExist {
         pageNumber = 1;
         leftBorder = 0;
-        if ((leftBorder + pageSize) < list.size()) {
-            rightBorder = leftBorder + pageSize;
+        int tempPlus = leftBorder + pageSize;
+        if ((tempPlus) < list.size()) {
+            rightBorder = tempPlus;
         } else {
             rightBorder = list.size();
         }
@@ -85,7 +89,7 @@ public class PageBean {
             throw new PageDoesNotExist();
         }
         List<Object> tempList = list.subList(leftBorder, rightBorder);
-        leftBorder = leftBorder + pageSize;
+        leftBorder = tempPlus;
         return tempList;
     }
 
